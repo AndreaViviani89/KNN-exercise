@@ -28,7 +28,7 @@ class KNN:
             for j in range(self.x.shape[0]): # for each point in test dataset, loop over all data points in traing dataset x
                 
                 euc = self.euclidian(x_test[i], self.x[j]) # distance between each point in test dataset and each point in train dataset
-                dif.append( [ euc, int(self.y[j]) ] ) # store the distance and real value (from training dataset) of the corresponding class
+                dif.append( [ euc, self.y[j] ] ) # store the distance and real value (from training dataset) of the corresponding class
             
             df = pd.DataFrame(dif, columns=['dist','target']) # After getting all distances for a given point, store them in a pd Dataframe, together
                                                                 # with the corresponding class
