@@ -9,7 +9,7 @@ class KNN:
     def __init__(self, k):
         self.k = k
 
-    def add_reference(self, x, y):
+    def fit(self, x, y):
         # training data
         self.x = x
         self.y = y
@@ -47,14 +47,14 @@ class KNN:
         return self.acc / y_test.shape[0] # output how many correct predictions over the total number of predictions made
 
 
-x, y = make_blobs(n_samples=300, n_features= 2, cluster_std = 0.6, random_state = 0, centers = 4 )
-knn = KNN(5)
+# x, y = make_blobs(n_samples=300, n_features= 2, cluster_std = 0.6, random_state = 0, centers = 4 )
+# knn = KNN(5)
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
+# x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.2, random_state = 0)
 
-knn.add_reference(x_train, y_train)
+# knn.add_reference(x_train, y_train)
 
-predictions = knn.predict(x_test)
+# predictions = knn.predict(x_test)
 
-acc = knn.evaluate(y_test)
-print(acc)
+# acc = knn.evaluate(y_test)
+# print(acc)
